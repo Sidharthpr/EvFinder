@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>EV</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<!--[if lt IE 9]>
+<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+<script src="{% static 'assets/js/respond.min.js' %}"></script>
+<![endif]-->
+
+
+
+
+
+
+<script>
+function validate()
+{
+var mob=document.getElementById("p").value.trim()
+if (document.getElementById("n").value.trim()=="")
+
+
+{
+alert('Enter name')
+document.getElementById("n").value=""
+document.getElementById("n").focus()
+}
+else if(document.getElementById("v").value.trim()=="")
+
+{
+alert('Enter vehicle')
+document.getElementById("v").value=""
+document.getElementById("v").focus()
+}
+else if(document.getElementById("d").value.trim()=="")
+
+{
+alert('Enter dob')
+document.getElementById("d").value
+document.getElementById("d").focus()
+}
+else if(document.getElementById("p").value.trim()=="")
+
+{
+alert('Enter phone number')
+document.getElementById("p").value=""
+document.getElementById("p").focus()
+}
+else if (mob.length !="10")
+{
+alert('Enter valid phone number')
+document.getElementById("p").value=""
+document.getElementById("p").focus()
+}
+else if (!/^\d+$/.test(mob))
+{
+alert('Enter valid phone number')
+document.getElementById("p").value=""
+document.getElementById("p").focus()
+}
+else if(document.getElementById("e").value.trim()=="")
+{
+alert('Enter Email')
+document.getElementById("e").value=""
+document.getElementById("e").focus()
+}
+else if (!document.getElementById("e").value.match(/^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
+{
+alert('Enter valid email')
+document.getElementById("e").value=""
+document.getElementById("e").focus()
+
+}
+else if(document.getElementById("uname").value.trim()=="")
+
+{
+alert('Enter username')
+document.getElementById("uname").value=""
+document.getElementById("uname").focus()
+}
+else if(document.getElementById("ps").value.trim()=="")
+
+{
+alert('Enter password')
+document.getElementById("ps").value=""
+document.getElementById("ps").focus()
+}
+else
+{
+document.getElementById("frm").submit();
+}
+}</script>
+
+
+
+
+
+
+
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+
+
+<<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-15 col-md15">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+            <li class=""><a href="index">Home</a></li>
+           
+           
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+        <div class="header_bottom">
+          <div class="header_bottom_left"><a class="logo">E-V station<span>CHARGE YOUR VEHICLE</span></a></div>
+          <div class="header_bottom_right"><a><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+ <div style="height:460px">
+<center><h2  style="color:white;"><strong>REGISTER</strong></h2></center>
+<center>
+<form name="frm" id="frm" action="registerhandler" method="GET">
+<table border=2 style="border:2px solid black;border-collapse:collapse;background-color:cyan" >
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; NAME</th>
+<th><input type="text" name="n" id="n"></th>
+</tr>
+<tr>
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; VEHICLE NAME/VEHICLE NO:</th>
+<th><input type="text" name="v" id="v"></th>
+</tr>
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; DOB</th>
+<th><input type="date" name="d" id="d" max="2015-12-31"></th>
+</tr>
+
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; PHONE</th>
+<th><input type="tel" name="p" id="p" placeholder="0123456789" pettern"[0-9]{10}"></th>
+</tr>
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; EMAIL</th>
+<th><input type="text" name="e" id="e" pattern="+@">
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; USERNAME</th>
+<th><input type="text" name="uname" id="uname" ></th>
+</tr>
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; PASSWORD</th>
+<th><input type="password" name="ps" id="ps" ></th>
+</tr>
+<tr>
+<th><input type="button" value="Register" onclick="validate()"></th>
+<th><input type="reset" value="Reset"></th></tr>
+</table>
+</center>
+</div>
+
+
+
+
+
+
+  <div class="content_middle">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_leftbar">
+          <div class="single_category wow fadeInDown">
+            <h2><span class="solid_line"></span> <a href="#" class="title_text">E-BIKES</a> </h2>
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Motorcycle: 1,070 miles (1,720 km) under 24 hours. Michel von Tell on Harley</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/2.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric flight: 439.5 miles (707.3 km) without charge</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="content_middle_middle">
+          <div class="slick_slider2">
+            <div class="single_featured_slide"><img src="{% static 'images/3.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"><img src="{% static 'images/4.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"> <img src="{% static 'images/red.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_rightbar">
+          <div class="single_category wow fadeInDown">
+            <h2>  <span class="solid_line"></span> <a href="#" class="title_text">category2</a> </h2>
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/wick.jpg' %}"></a></div>
+                <h3 class="post_titile"><a href="pages/single.html">Electric Land Speed Record 353 mph (568 km/h)</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Car Distance Record 1,725 miles (2,776 km) in 24 hours by Bjørn Nyland.</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_left">
+            <p><a>E-V STATION</a></p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_right">
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script> 
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script> 
+<script src="{% static 'assets/js/wow.min.js' %}"></script> 
+<script src="{% static 'assets/js/slick.min.js' %}"></script> 
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

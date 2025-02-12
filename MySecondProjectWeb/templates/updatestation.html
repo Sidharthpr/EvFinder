@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>EV</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<!--[if lt IE 9]>
+<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+<script src="{% static 'assets/js/respond.min.js' %}"></script>
+<![endif]-->
+<script>
+
+function update(a)
+{
+document.getElementById("id").value=a;
+document.getElementById("b").value=document.getElementById("d"+a).value;
+document.getElementById("b1").value=document.getElementById("c"+a).value;
+document.getElementById("b2").value=document.getElementById("e"+a).value;
+
+
+
+
+
+
+
+
+
+document.getElementById("frm").submit();
+}
+</script>
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-15 col-md15">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+           <li class=""><a href="adminhome">Home</a></li>
+			
+		<li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">E V STATION</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                 <li><a href="addstation">Add</a></li><br>
+                <li><a href="updatestation">update</a></li><br>
+                <li><a href="adminviewallstation">view</a></li>
+              </ul>
+
+              
+                <li class=""><a href="adminviewuser">viewuser</a></li>
+              
+			  
+<li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">EV REQUST</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                <li><a href="adminviewusing">view using</a></li>
+                <li><a href="adminviewrequst"> view requst</a></li>
+				<li><a href="adminapproverequst"> approved </a></li>
+               
+              </ul>
+			  
+			  
+<li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">feedback</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                <li><a href="adminviewfeedback">view</a></li>
+                
+              </ul>
+<li class="adminlogin"><a href="adminlogin">logout</a></li>
+           
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+        <div class="header_bottom">
+          <div class="header_bottom_left"><a class="logo">E-V station<span>CHARGE YOUR VEHICLE</span></a></div>
+          <div class="header_bottom_right"><a><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+  
+ <div style="height:520px">
+<br>
+<br>
+<br>
+<center><h2  style="color:white;"><strong> UPDATE STATION</strong></h2>
+<form name="frm" id="frm" action="updatestationhandler" method="get">
+<input type="hidden" id="b" name="b">
+<input type="hidden" id="b1" name="b1">
+<input type="hidden" id="b2" name="b2">
+<input type="hidden" id="id" name="id">
+</form>
+
+
+
+<table border=2 style="border:2px solid black;border-collapse:collapse;background-color:white" >
+
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; NO &nbsp; &nbsp;  &nbsp; </th>
+<th><br> &nbsp; &nbsp;  &nbsp; ADMIN &nbsp; &nbsp;  &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; DISTRICT &nbsp; &nbsp;  &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; CITY &nbsp; &nbsp;  &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; EVS NAME &nbsp; &nbsp;  &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; PRICE &nbsp; &nbsp;  &nbsp;</th>
+</tr>
+{% for x in drow %}
+<tr>
+<td><br> &nbsp; &nbsp;  &nbsp; {{x.0}} &nbsp; &nbsp;  &nbsp;</td>
+
+<td>{{x.1}}</td>
+
+
+<td><input type="text" name="d{{x.0}}" id="d{{x.0}}" value="{{x.2}}"> </td>
+
+<td><input type="text" name="c{{x.0}}" id="c{{x.0}}" value="{{x.3}}"> </td>
+
+
+<td><input type="text" name="e{{x.0}}" id="e{{x.0}}" value="{{x.4}}"> </td>
+
+<td><br> &nbsp; &nbsp;  &nbsp; {{x.5}} &nbsp; &nbsp;  &nbsp;</td>
+
+<td><input type="button" value="Update" onclick="update('{{x.0}}')"></td>
+</tr>{% endfor %}
+</table>
+</center>
+</div>
+	
+    <div class="content_middle">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_leftbar">
+          <div class="single_category wow fadeInDown">
+            
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Motorcycle: 1,070 miles (1,720 km) under 24 hours. Michel von Tell on Harley</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/2.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric flight: 439.5 miles (707.3 km) without charge</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="content_middle_middle">
+          <div class="slick_slider2">
+            <div class="single_featured_slide"><img src="{% static 'images/3.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"><img src="{% static 'images/4.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"> <img src="{% static 'images/red.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_rightbar">
+          <div class="single_category wow fadeInDown">
+            
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/wick.jpg' %}"></a></div>
+                <h3 class="post_titile"><a href="pages/single.html">Electric Land Speed Record 353 mph (568 km/h)</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Car Distance Record 1,725 miles (2,776 km) in 24 hours by Bjørn Nyland.</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_left">
+            <p><a>E-V STATION</a></p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_right">
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script> 
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script> 
+<script src="{% static 'assets/js/wow.min.js' %}"></script> 
+<script src="{% static 'assets/js/slick.min.js' %}"></script> 
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

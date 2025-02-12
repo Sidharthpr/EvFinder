@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function userpay(a)
+{
+document.getElementById("id").value=a;
+document.getElementById("frm").submit();
+}
+function using(b)
+{
+document.getElementById("useid").value=b;
+document.getElementById("frm1").submit();
+}
+function finishing(c,f)
+{
+document.getElementById("finishid").value=c;
+document.getElementById("stationsid").value=f;
+document.getElementById("frm2").submit();
+}
+function selectid(d,e)
+{
+
+document.getElementById("selectedid").value=d;
+document.getElementById("stationid").value=e;
+document.getElementById("frm3").submit();
+}
+
+</script>
+<title>EV</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<!--[if lt IE 9]>
+<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+<script src="{% static 'assets/js/respond.min.js' %}"></script>
+<![endif]-->
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-15 col-md15">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+           <ul class="top_nav">
+             <li class=""><a href="userhome">Home</a></li>
+            <li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">profile</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                 <li><a href="updateprofile">Update</a></li><br>
+                <li><a href="viewuserprofile">View</a></li>
+
+              </ul>
+<li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">Find station</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                <li><a href="allstation">List all station</a></li>
+                <li><a href="search">Searchstation</a></li>
+                <li><a href="confirm">Conformation</a></li>
+
+              </ul>
+<li class="dropdown"> <a href="#" class="" data-toggle="dropdown" role="button" aria-expanded="false">feedback</a>
+              <ul style="background-color:black;" class="dropdown-menu" role="menu">
+                <li><a href="postfeedback">post</a></li><br>
+                <li><a href="viewfeedback">View</a></li>
+
+              </ul>
+<li class="login"><a href="login">logout</a></li>
+
+
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+        <div class="header_bottom">
+          <div class="header_bottom_left"><a class="logo">E-V station<span>CHARGE YOUR VEHICLE</span></a></div>
+          <div class="header_bottom_right"><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="height:460px">
+<center>
+<form action="confirmhandler" name="frm" id="frm">
+<input type="hidden" name="id" id="id">
+</form>
+<form name="frm1" id="frm1" action="usinghandler">
+<input type="hidden" name="useid" id="useid">
+</form>
+<form name="frm2" id="frm2" action="finishhandler">
+<input type="hidden" name="finishid" id="finishid">
+<input type="hidden" name="stationsid" id="stationsid">
+</form>
+
+<form name="frm3" id="frm3" action="deletedhandler">
+<input type="hidden" name="selectedid" id="selectedid">
+<input type="hidden" name="stationid" id="stationid">
+
+</form>
+
+<br><br><br><br>
+<center><h2  style="color:white;"><strong>CONFIRM</strong></h2></center>
+<div style="height:300px;overflow:auto">
+<table border=2 style="border:2px solid black;border-collapse:collapse;background-color:white" >
+<tr>
+<th><br> &nbsp; &nbsp;  &nbsp; RID &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; U-NAME &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; DISTRICT &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; CITY &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; EVS-NAME &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; STATUS &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; PRICE &nbsp; &nbsp; &nbsp;</th>
+<th><br> &nbsp; &nbsp;  &nbsp; STATION ID &nbsp; &nbsp; &nbsp;</th>
+</tr>
+{% for x in drow %}
+<tr>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.0}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.1}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.2}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.3}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.4}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.5}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.7}}</td>
+<td><br> &nbsp; &nbsp;  &nbsp;{{x.8}}</td>
+{%  if x.5 == 'approved'  %}
+<td><input type="button" value="Pay" onclick="userpay('{{x.0}}')">
+{% endif %}
+</td>
+<td>
+{%  if x.5 == 'recived'  %}
+<input type="button" value="Use" onclick="using('{{x.0}}')">
+{% endif %}
+
+{%  if x.5 == 'using'  %}
+<input type="button" value="Finish" onclick="finishing('{{x.0}}','{{x.8}}')">
+{% endif %}
+
+
+{%  if x.5 == 'created'  %}
+<input type="button" value="cancel" onclick="selectid('{{x.0}}','{{x.8}}')">
+{% endif %}
+
+</td>
+{% endfor %}
+</tr>
+</table>
+</div>
+</center>
+</div>
+
+    <div class="content_middle">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_leftbar">
+          <div class="single_category wow fadeInDown">
+
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Motorcycle: 1,070 miles (1,720 km) under 24 hours. Michel von Tell on Harley</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/2.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric flight: 439.5 miles (707.3 km) without charge</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="content_middle_middle">
+          <div class="slick_slider2">
+            <div class="single_featured_slide"><img src="{% static 'images/3.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"><img src="{% static 'images/4.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"> <img src="{% static 'images/red.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_rightbar">
+          <div class="single_category wow fadeInDown">
+
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/wick.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Land Speed Record 353 mph (568 km/h)</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Car Distance Record 1,725 miles (2,776 km) in 24 hours by Bjørn Nyland.</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_left">
+            <p><a>E-V STATION</a></p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_right">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

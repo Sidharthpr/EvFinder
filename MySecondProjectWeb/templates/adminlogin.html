@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>EV</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<!--[if lt IE 9]>
+<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+<script src="{% static 'assets/js/respond.min.js' %}"></script>
+<![endif]-->
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-15 col-md15">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+            <li class=""><a href="index">Home</a></li>
+           
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+        <div class="header_bottom">
+          <div class="header_bottom_left"><a class="logo" >E-V station<span>CHARGE YOUR VEHICLE</span></a></div>
+          <div class="header_bottom_right"><a><img src="images/addbanner_728x90_V1.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+ <div style="height:250px">
+<center>
+<center><h1 style="color:white;"><strong>ADMIN LOGIN</strong></h1></center>
+<form name="frm" id="frm" method="get" action="adminloginhandler">
+<table border=2 style="border:2px solid white;background-color:white;border-collapse:collapse;width:350px;height:50px" ><tr><td style="color:black;"><h4> USERNAME </h4></td></tr>
+<tr><td style="color:black;"><input type="text" name="un" id="un"  size="50",height="10" required placeholder="Name"  title="Enter name" oninvalid="alert('Enter UserName')"></td></tr>
+<tr><td style="color:black;"><h4> PASSWORD </h4></td></tr>
+<tr><td  style="color:black;"><input size="50" type="password" name="pw" id="pw"  required placeholder="Password" title="Enter password" oninvalid="alert('Enter Password')"></td></tr>
+<tr><td><input type="submit" value="login"  onclick="formvalidate()"></th>
+</table>
+{{dmsg}}
+</form>
+</center>
+<br><br>
+</div>
+	
+	
+ <div class="content_middle">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_leftbar">
+          <div class="single_category wow fadeInDown">
+          
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Motorcycle: 1,070 miles (1,720 km) under 24 hours. Michel von Tell on Harley</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/2.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric flight: 439.5 miles (707.3 km) without charge</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="content_middle_middle">
+          <div class="slick_slider2">
+            <div class="single_featured_slide"><img src="{% static 'images/3.jpg' %}" alt=""></a>
+              <h2>Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"><img src="{% static 'images/4.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+            <div class="single_featured_slide"> <img src="{% static 'images/red.jpg' %}" alt=""></a>
+              <h2><a href="#">Electric flight: 439.5 miles (707.3 km) without charge</a></h2>
+              <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulput...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="content_middle_rightbar">
+          <div class="single_category wow fadeInDown">
+            
+            <ul class="catg1_nav">
+              <li>
+                <div class="catgimg_container"> <a class="catg1_img"><img alt="" src="{% static 'images/wick.jpg' %}"></a></div>
+                <h3 class="post_titile"><a href="pages/single.html">Electric Land Speed Record 353 mph (568 km/h)</a></h3>
+              </li>
+              <li>
+                <div class="catgimg_container"><img alt="" src="{% static 'images/yellow.jpg' %}"></a></div>
+                <h3 class="post_titile">Electric Car Distance Record 1,725 miles (2,776 km) in 24 hours by Bjørn Nyland.</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+        
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_left">
+            <p><a>E-V STATION</a></p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="footer_bottom_right">
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script> 
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script> 
+<script src="{% static 'assets/js/wow.min.js' %}"></script> 
+<script src="{% static 'assets/js/slick.min.js' %}"></script> 
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>
