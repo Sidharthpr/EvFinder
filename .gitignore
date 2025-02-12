@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django-specific:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+
+# If you have local settings that shouldn’t be shared
+local_settings.py
+
+# Environment / Virtual Environments
+.env
+.venv
+venv/
+ENV/
+env/
+ENV.bak/
+venv.bak/
+
+# Coverage reports
+htmlcov/
+
+# Translations
+*.mo
+
+# Static and media files (if generated automatically)
+staticfiles/
+media/
+
+# Backup files
+*.bak
+*.swp
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
